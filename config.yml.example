@@ -1,0 +1,9 @@
+cache:
+  filename: cache.json
+logging:
+  filename: logging.log
+  level: 10
+systems:
+  - name: Nintendo - Game Boy
+    tag: nintendo-game-body
+    path: \\drive\directory\system

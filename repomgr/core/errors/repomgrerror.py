@@ -1,0 +1,2 @@
+class RepomgrError(Exception):
+    pass
