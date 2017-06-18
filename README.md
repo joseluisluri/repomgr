@@ -61,6 +61,8 @@ All available commands:
 
 ### ``search``
 Performs a full text search on ROM index cache for the specified needles.
+
+Example:
 ```
 $ python repomgr search zelda
 CRC32     Name                                                              Size    System
@@ -78,6 +80,7 @@ ea20b82a  Zelda no Densetsu - Yume o Miru Shima (Japan) (Rev A).gb          512 
 ### ``info``
 Display ROM information.
 
+Example:
 ```
 $ python repomgr info 8cf27c90
 Name: Legend of Zelda, The - Link's Awakening (USA, Europe).gb
