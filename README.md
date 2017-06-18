@@ -119,11 +119,26 @@ Example:
   - ...
 ```
 
-## compression
+### compression
 A rom must be compressed like this:
 - **Format**: Zip
 - **Extension**: *.zip
 - **Compression level**: Normal
+
+## Developers
+
+### Distribute
+Create a distribution and upload with twine:
+```
+$ python setup.py sdist
+$ twine upload dist/*
+```
+
+### Test
+*pytest* will run all files in the current directory and its subdirectories of the form test_*.py or *_test.py
+```
+$ pytest
+```
 
 ## License
 
