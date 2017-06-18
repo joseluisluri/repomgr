@@ -108,6 +108,7 @@ celerybeat-schedule
 .venv
 venv/
 ENV/
+idea/
 
 # Spyder project settings
 .spyderproject
@@ -115,9 +116,6 @@ ENV/
 # Rope project settings
 .ropeproject
 
-.idea/misc.xml
-.idea/modules.xml
-.idea/repomgr.iml
-.idea/workspace.xml
+.idea/*
 repomgr/__pycache__/
 repomgr.egg-info
