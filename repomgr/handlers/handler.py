@@ -1,7 +1,7 @@
 from abc import ABCMeta
 from logging import Logger
 
-from ..models import Config
+from repomgr.models import Config
 
 
 class Handler:

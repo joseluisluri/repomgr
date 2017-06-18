@@ -3,8 +3,8 @@ import json
 import time
 from datetime import datetime
 
-from ..errors import FileFormatError
-from ..models import Rom, System
+from repomgr.errors import FileFormatError
+from repomgr.models import Rom, System
 
 
 class CacheHelper:

@@ -4,7 +4,7 @@ Command-line tool for handling ROM repository
 ## Introduction
 Provides a high-level command-line interface for ROM managment:
 
-> One Tool to rule them all, One Tool to find them.
+> One tool to rule them all, one tool to find them.
 
 
 Synopsis:
@@ -12,11 +12,12 @@ Synopsis:
 repomgr COMMAND [OPTIONS]
 ```
 Dependencies:
-- **pyyaml**: http://pyyaml.org/
+- **pyyaml**: http://pyyaml.org
+- **tabulate**: https://pypi.python.org/pypi/tabulate
 
 Usage:
-- **search** ++regexp++: performs a full text search on ROM index cache for the specified seed.
-- **info** ++crc32++: display ROM information.
+- **search** <u>regexp</u>: performs a full text search on ROM index cache for the specified seed.
+- **info** <u>crc32</u>: display ROM information.
 - **update**: synchronize the ROM index cache from their repo.
 
 
@@ -53,8 +54,24 @@ Nintendo - Game Boy (1609 roms)
 All done. :)
 ```
 
+## Installation
+The latest stable release can be installed using PyPi:
+```
+$ pip install repomgr
+```
+
+The unstable version must be installed from sources:
+```
+$ git clone https://github.com/joseluisluri/repomgr.git
+$ cd repomgr
+$ python setup.py install
+```
+
 ## Configuration
 
+*repomgr* looks in the current working directory for a config file.
+
+**config.yml**:
 ```
 cache:
   filename: cache.json
@@ -68,7 +85,6 @@ systems:
   - name: Nintendo - Game Boy
     tag: nintendo-game-body
     path: \\NAS-Drive\Roms\Nintendo - Game Boy
-
 ```
 
 **Note:** logging.level - debug: 10, info: 20, warn: 30, error: 40, critical: 50
@@ -93,6 +109,15 @@ A rom must be compressed like this:
 - **Format**: Zip
 - **Extension**: *.zip
 - **Compression level**: Normal
+
+## Developers
+
+```
+$ git clone https://github.com/joseluisluri/repomgr.git
+$ python3 setup.py sdist
+$ python3 setup.py install
+$ python3 repomgr -h
+```
 
 ## License
 

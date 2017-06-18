@@ -1,8 +1,8 @@
 import os
 
-from ..errors import RepomgrError
-from ..handlers import Handler
-from ..utils import CacheHelper, PrintHelper
+from repomgr.errors import RepomgrError
+from repomgr.handlers import Handler
+from repomgr.utils import CacheHelper, PrintHelper
 
 
 class InfoHandler(Handler):

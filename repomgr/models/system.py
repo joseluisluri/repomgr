@@ -1,4 +1,4 @@
-from ..models import Rom
+from repomgr.models import Rom
 
 
 class System:

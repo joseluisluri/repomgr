@@ -2,8 +2,8 @@ import os
 from datetime import datetime
 from zipfile import ZipFile, ZipInfo, BadZipFile
 
-from ..errors import FileFormatError
-from ..models import Rom
+from repomgr.errors import FileFormatError
+from repomgr.models import Rom
 
 
 class ScanHelper:

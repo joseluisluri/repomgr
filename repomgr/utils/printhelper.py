@@ -1,6 +1,6 @@
 from tabulate import tabulate
 
-from ..models import Rom, System
+from repomgr.models import Rom, System
 
 
 class PrintHelper:
