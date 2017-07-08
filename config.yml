@@ -1,0 +1,27 @@
+# filename: log file
+# level: debug: 10, info: 20, warn: 30, error: 40, critical: 50
+# debug: (True/False) print debug message in console
+cache:
+  filename: cache.json
+logging:
+  filename: logging.log
+  level: 10
+systems:
+  - name: Atari - 5200
+    tag: atari-5200
+    path: \\absolut\consolas\Roms\Atari - 5200
+  - name: Atari - 7800
+    tag: atari-7800
+    path: \\absolut\consolas\Roms\Atari - 7800
+  - name: Atari - Jaguar
+    tag: atari-jaguar
+    path: \\absolut\consolas\Roms\Atari - Jaguar
+  - name: Atari - Lynx
+    tag: atari-Lynx
+    path: \\absolut\consolas\Roms\Atari - Lynx
+  - name: Nintendo - Game Boy
+    tag: nintendo-game-body
+    path: \\absolut\consolas\Roms\Nintendo - Game Boy
+  - name: Sega - Mega Drive - Genesis
+    tag: sega-mega-drive-genesis
+    path: \\absolut\consolas\Roms\Sega - Mega Drive - Genesis

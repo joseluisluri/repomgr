@@ -16,6 +16,7 @@ repomgr COMMAND [OPTIONS]
 Dependencies:
 - **python3**: https://www.python.org
 - **pyyaml**: http://pyyaml.org
+- **injector**: https://github.com/alecthomas/injector
 - **tabulate**: https://pypi.python.org/pypi/tabulate
 
 ## Installation

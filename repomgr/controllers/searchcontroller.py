@@ -1,12 +1,13 @@
 import os
 
 from repomgr.errors import RepomgrError
-from repomgr.handlers import Handler
+from repomgr.controllers import Controller
 from repomgr.utils import CacheHelper, PrintHelper
 
 
-class SearchHandler(Handler):
-    def run(self, needles: str):
+class SearchController(Controller):
+
+    def _run(self, needles: str):
         if not os.path.exists(self._config.cache.filename):
             raise RepomgrError('ROM index cache must be generated before')
 
@@ -16,10 +17,10 @@ class SearchHandler(Handler):
 
         matches = list()
         for system in repository:
-            for rom in system.roms:
+            for dump in system.dumps:
                 for needle in needles:
-                    if needle in rom.name.lower():
-                        matches.append((system, rom))
+                    if needle in dump.name.lower():
+                        matches.append((system, dump))
                         break
 
         if len(matches):

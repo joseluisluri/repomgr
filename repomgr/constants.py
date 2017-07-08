@@ -1,8 +1,13 @@
 NAME = 'repomgr'
 DESCRIPTION = 'Command-line tool for handling ROM repository'
-EPILOG = 'One Tool to rule them all, One Tool to find them'
+VERSION = 0.3
+EPILOG = 'One tool to rule them all, One tool to find them'
 
 CONF_FILENAME = 'config.yml'
+
+CONF_CACHE_SECTION = 'cache'
+CONF_LOGGING_SECTION = 'logging'
+CONF_SYSTEMS_SECTION = 'systems'
 
 LOG_FILENAME = 'output.log'
 LOG_FORMAT = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
@@ -21,3 +26,8 @@ INFO_ARG_HELP = 'rom CRC32'
 
 UPDATE_CMD_NAME = 'update'
 UPDATE_CMD_HELP = 'resynchronize the ROM index cache from their repo.'
+
+STATS_CMD_NAME = 'stats'
+STATS_CMD_HELP = 'display stats information.'
+STATS_ARG_NAME = 'system'
+STATS_ARG_HELP = 'stats'
