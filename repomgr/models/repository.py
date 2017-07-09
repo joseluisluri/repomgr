@@ -1,3 +1,4 @@
+import time
 from datetime import datetime
 
 from repomgr.models import System
@@ -29,3 +30,15 @@ class Repository:
             for dump in system.dumps:
                 acc += len(dump.roms)
         return acc
+
+    def as_dict(self) -> dict:
+        systems: [dict] = []
+        for system in self.systems:
+            systems.append(system.as_dict())
+
+        dct: dict = {}
+        dct.update({'modified': time.mktime(self.modified.timetuple())})
+        dct.update({'size': self.size})
+        dct.update({'dumps': self.dumps})
+        dct.update({'systems': systems})
+        return dct

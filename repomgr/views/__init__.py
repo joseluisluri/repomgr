@@ -1,3 +1,6 @@
 from .view import View
-from .updateview import UpdateView
+from .searchview import SearchView
 from .statsview import StatsView
+from .updateview import UpdateView
+from .infoview import InfoView
+from .syncview import SyncView

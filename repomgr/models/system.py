@@ -1,5 +1,3 @@
-from functools import reduce
-
 from repomgr.models import Dump
 
 
@@ -18,4 +16,16 @@ class System:
         return acc
 
     def __str__(self):
-        return str(self.__dict__)
+        return str(self.as_dict())
+
+    def as_dict(self) -> dict:
+        dumps: [dict] = []
+        for dump in self.dumps:
+            dumps.append(dump.as_dict())
+
+        dct: dict = {}
+        dct.update({'name': self.name})
+        dct.update({'tag': self.tag})
+        dct.update({'path': self.path})
+        dct.update({'dumps': dumps})
+        return dct

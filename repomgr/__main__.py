@@ -5,13 +5,9 @@ from argparse import ArgumentParser
 from injector import Injector
 
 from repomgr.constants import *
-from repomgr.controllers import Controller
-from repomgr.controllers import InfoController
-from repomgr.controllers import SearchController
-from repomgr.controllers import StatsController
-from repomgr.controllers import UpdateController
-from repomgr.errors import RepomgrError
-from repomgr.errors import ServiceError
+from repomgr.controllers import Controller, SyncController, InfoController, SearchController, StatsController, \
+    UpdateController
+from repomgr.errors import RepomgrError, ServiceError
 from repomgr.utils import PrintHelper
 
 
@@ -29,19 +25,23 @@ def get_parser_args():
 
     # stats
     parser_stats: any = subparsers.add_parser(STATS_CMD_NAME, help=STATS_CMD_HELP)
-    parser_stats.add_argument(STATS_ARG_NAME, help=STATS_ARG_HELP, type=str)
+    parser_stats.add_argument(STATS_ARG_NAME, nargs='?', help=STATS_ARG_HELP, type=str)
 
     # update
-    subparsers.add_parser(UPDATE_CMD_NAME, help=UPDATE_CMD_HELP)
-    return parser
+    parser_update: any = subparsers.add_parser(UPDATE_CMD_NAME, help=UPDATE_CMD_HELP)
+    parser_update.add_argument(UPDATE_ARG_NAME, nargs='?', help=UPDATE_ARG_HELP, type=str)
 
+    # sync
+    subparsers.add_parser(SYNC_CMD_NAME, help=SYNC_CMD_HELP)
+    return parser
 
 def main(argv: dict):
     commands: dict = {
         SEARCH_CMD_NAME: SearchController,
         INFO_CMD_NAME: InfoController,
         STATS_CMD_NAME: StatsController,
-        UPDATE_CMD_NAME: UpdateController
+        UPDATE_CMD_NAME: UpdateController,
+        SYNC_CMD_NAME: SyncController
     }
 
     try:
@@ -54,7 +54,7 @@ def main(argv: dict):
 
         # args management
         parser: ArgumentParser = get_parser_args()
-        args = parser.parse_args(argv)
+        args: any = parser.parse_args(argv)
 
         # load controller by reflection
         if args.command in commands.keys():

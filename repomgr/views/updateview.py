@@ -9,7 +9,7 @@ from repomgr.views import View
 class UpdateView(View):
     @inject
     def __init__(self, print_service: PrintService):
-        self._print_service = print_service
+        super().__init__(print_service)
         self._print_service.echo('Generating ROM index cache:')
 
     def progress(self, dump: Dump, index: int, total: int):

@@ -6,6 +6,11 @@ cache:
 logging:
   filename: logging.log
   level: 10
+sync:
+  host: 192.168.1.2
+  port: 27017
+  database: nand
+  collection: repo
 systems:
   - name: Atari - 5200
     tag: atari-5200
@@ -19,9 +24,57 @@ systems:
   - name: Atari - Lynx
     tag: atari-Lynx
     path: \\absolut\consolas\Roms\Atari - Lynx
+  - name: Atari - ST
+    tag: atari-st
+    path: \\absolut\consolas\Roms\Atari - ST
+  - name: Bandai - WonderSwan
+    tag: bandai-wonderswan
+    path: \\absolut\consolas\Roms\Bandai - WonderSwan
+  - name: Bandai - WonderSwan Color
+    tag: bandai-wonderswan-color
+    path: \\absolut\consolas\Roms\Bandai - WonderSwan Color
+  - name: Casio - Loopy
+    tag: casio-loopy
+    path: \\absolut\consolas\Roms\Casio - Loopy
+  - name: Casio - PV-1000
+    tag: casio-pv-1000
+    path: \\absolut\consolas\Roms\Casio - PV-1000
+  - name: Coleco - ColecoVision
+    tag: coleco-vision
+    path: \\absolut\consolas\Roms\Coleco - ColecoVision
+  - name: Commodore - 64
+    tag: commodore-64
+    path: \\absolut\consolas\Roms\Commodore - 64
+  - name: Commodore - 64 (PP)
+    tag: commodore-64-pp
+    path: \\absolut\consolas\Roms\Commodore - 64 (PP)
+  - name: Commodore - 64 (Tapes)
+    tag: commodore-64-tapes
+    path: \\absolut\consolas\Roms\Commodore - 64 (Tapes)
+  - name: Commodore - Amiga
+    tag: commodore-amiga
+    path: \\absolut\consolas\Roms\Commodore - Amiga
+  - name: Commodore - Plus-4
+    tag: commodore-plus-4
+    path: \\absolut\consolas\Roms\Commodore - Plus-4
+  - name: Commodore - VIC-20
+    tag: commodore-vic-20
+    path: \\absolut\consolas\Roms\Commodore - VIC-20
+  - name: Emerson - Arcadia 2001
+    tag: emerson-arcadia-2001
+    path: \\absolut\consolas\Roms\Emerson - Arcadia 2001
   - name: Nintendo - Game Boy
     tag: nintendo-game-body
     path: \\absolut\consolas\Roms\Nintendo - Game Boy
+  - name: Nintendo - Game Boy Advance
+    tag: nintendo-game-body-advance
+    path: \\absolut\consolas\Roms\Nintendo - Game Boy Advance
+  - name: Nintendo - Game Boy Color
+    tag: nintendo-game-body-color
+    path: \\absolut\consolas\Roms\Nintendo - Game Boy Color
+  - name: Nintendo - New Nintendo 3DS
+    tag: nintendo-new-nintendo-3ds
+    path: \\absolut\consolas\Roms\Nintendo - New Nintendo 3DS
   - name: Sega - Mega Drive - Genesis
     tag: sega-mega-drive-genesis
     path: \\absolut\consolas\Roms\Sega - Mega Drive - Genesis

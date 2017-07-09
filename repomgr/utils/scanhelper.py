@@ -1,4 +1,6 @@
+import hashlib
 import os
+import pathlib
 from datetime import datetime
 from zipfile import ZipFile, BadZipFile
 
@@ -7,6 +9,16 @@ from repomgr.models import Dump, Rom
 
 
 class ScanHelper:
+
+    @staticmethod
+    def uuid(s: str) -> str:
+        return hashlib.sha1(s.encode('utf-8')).hexdigest()[:12]
+
+    @staticmethod
+    def path_simple_name(path: str) -> str:
+        return os.path.splitext(pathlib.Path(path).name)[0]
+
+
     @staticmethod
     def scan_zip(path: str) -> Dump:
         """"Returns a ROM model for the specified compressed rom.
@@ -32,7 +44,9 @@ class ScanHelper:
                                crc32=hex(entity.CRC))
                 roms.append(rom)
 
-        return Dump(name=os.path.splitext(path)[0],
+        return Dump(
+                    uuid=ScanHelper.uuid(path),
+                    name=ScanHelper.path_simple_name(path),
                     zipfile=path,
                     roms=roms)
 

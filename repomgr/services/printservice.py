@@ -2,8 +2,9 @@ import sys
 from math import ceil
 
 from injector import singleton
+from tabulate import tabulate
 
-from repomgr.models import Repository
+from repomgr.models import Repository, System, Dump
 from repomgr.services.service import Service
 from repomgr.utils import PrintHelper
 
@@ -39,3 +40,29 @@ class PrintService(Service):
         print('Dumps: %s' % repository.dumps)
         print('Roms: %s' % repository.roms)
         print('Size: %s' % PrintHelper.human_size(repository.size))
+
+    @classmethod
+    def table(cls, content: [tuple]):
+        rows = []
+        for entry in content:
+            system, dump = entry
+            rows.append([
+                dump.uuid,
+                dump.name,
+                PrintHelper.human_size(dump.size),
+                system.name
+            ])
+
+        print(tabulate(rows, headers=['Id', 'Name', 'Size', 'System']), end='\n\n')
+
+    @classmethod
+    def dump(cls, system: System, dump: Dump):
+        print('Dump: %s' % dump.name)
+        print('Zip: %s' % dump.zip)
+        print('Contains: %d rom(s)' % len(dump.roms))
+        for rom in dump.roms:
+            print(' - Name: %s' % rom.name)
+            print(' - System: %s' % system.name)
+            print(' - Modified: %s' % str(rom.modified))
+            print(' - Size: %s' % PrintHelper.human_size(rom.size))
+            print(' - Crc32: %s' % rom.crc32[2:])
